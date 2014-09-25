@@ -39,7 +39,7 @@ namespace NLog.Internal
     using System.Windows;
     using System.Windows.Browser;
 #else
-    using System.Windows.Forms;
+    //using System.Windows.Forms;
 #endif
 
     /// <summary>
@@ -67,7 +67,7 @@ namespace NLog.Internal
                 action();
             }
 #else
-            MessageBox.Show(message, caption);
+            //MessageBox.Show(message, caption);
 #endif
         }
     }

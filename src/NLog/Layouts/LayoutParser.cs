@@ -77,10 +77,10 @@ namespace NLog.Layouts
                     }
 
                     LayoutRenderer newLayoutRenderer = ParseLayoutRenderer(configurationItemFactory, sr);
-                    if (CanBeConvertedToLiteral(newLayoutRenderer))
-                    {
-                        newLayoutRenderer = ConvertToLiteral(newLayoutRenderer);
-                    }
+                    //if (CanBeConvertedToLiteral(newLayoutRenderer))
+                    //{
+                    //    newLayoutRenderer = ConvertToLiteral(newLayoutRenderer);
+                    //}
 
                     // layout renderer
                     result.Add(newLayoutRenderer);
@@ -328,6 +328,8 @@ namespace NLog.Layouts
 
         private static bool CanBeConvertedToLiteral(LayoutRenderer lr)
         {
+            return false;
+            /*
             foreach (IRenderable renderable in ObjectGraphScanner.FindReachableObjects<IRenderable>(lr))
             {
                 if (renderable.GetType() == typeof(SimpleLayout))
@@ -342,6 +344,7 @@ namespace NLog.Layouts
             }
 
             return true;
+            */
         }
 
         private static void MergeLiterals(List<LayoutRenderer> list)

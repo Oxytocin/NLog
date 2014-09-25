@@ -12,30 +12,33 @@
     <RootNamespace>NLog</RootNamespace>
     <AssemblyName>NLog</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\NLog.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <NoWarn>0419</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <DefineConstants>MONO;WCF_SUPPORTED;MONO_2_0;DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <OutputPath>bin\Debug</OutputPath>
-    <NoStdLib>true</NoStdLib>
+    <OutputPath>..\..\bin\Debug</OutputPath>
+    <NoStdLib>True</NoStdLib>
+    <IntermediateOutputPath>$(BaseOutputDirectory)obj\$(Configuration)\Mono 2.x</IntermediateOutputPath>
+    <DocumentationFile>$(OutputPath)\NLog.xml</DocumentationFile>
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <DefineConstants>MONO;WCF_SUPPORTED;MONO_2_0;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <OutputPath>bin\Release</OutputPath>
-    <NoStdLib>true</NoStdLib>
+    <OutputPath>..\..\bin\Release</OutputPath>
+    <NoStdLib>True</NoStdLib>
+    <IntermediateOutputPath>$(BaseOutputDirectory)obj\$(Configuration)\Mono 2.x</IntermediateOutputPath>
+    <DocumentationFile>$(OutputPath)\NLog.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <NoStdLib>true</NoStdLib>
@@ -47,21 +50,13 @@
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Messaging" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="Mono.Posix" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyBuildInfo.cs" />
     <Compile Include="Common\AsyncContinuation.cs" />
     <Compile Include="Common\AsyncHelpers.cs" />
     <Compile Include="Common\AsynchronousAction.cs" />
@@ -160,16 +155,6 @@
     <Compile Include="Internal\NativeMethods.cs">
       <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Internal\NetworkSenders\HttpNetworkSender.cs" />
-    <Compile Include="Internal\NetworkSenders\INetworkSenderFactory.cs" />
-    <Compile Include="Internal\NetworkSenders\ISocket.cs" />
-    <Compile Include="Internal\NetworkSenders\NetworkSender.cs" />
-    <Compile Include="Internal\NetworkSenders\NetworkSenderFactory.cs" />
-    <Compile Include="Internal\NetworkSenders\SocketAsyncEventArgs.cs" />
-    <Compile Include="Internal\NetworkSenders\SocketError.cs" />
-    <Compile Include="Internal\NetworkSenders\SocketProxy.cs" />
-    <Compile Include="Internal\NetworkSenders\TcpNetworkSender.cs" />
-    <Compile Include="Internal\NetworkSenders\UdpNetworkSender.cs" />
     <Compile Include="Internal\ObjectGraphScanner.cs" />
     <Compile Include="Internal\ParameterUtils.cs" />
     <Compile Include="Internal\PlatformDetector.cs" />
@@ -301,15 +286,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Targets\ArchiveNumberingMode.cs" />
     <Compile Include="Targets\AspResponseTarget.cs" />
-    <Compile Include="Targets\ChainsawTarget.cs" />
     <Compile Include="Targets\ColoredConsoleTarget.cs" />
     <Compile Include="Targets\ConsoleOutputColor.cs" />
     <Compile Include="Targets\ConsoleRowHighlightingRule.cs" />
     <Compile Include="Targets\ConsoleTarget.cs" />
     <Compile Include="Targets\ConsoleWordHighlightingRule.cs" />
-    <Compile Include="Targets\DatabaseCommandInfo.cs" />
     <Compile Include="Targets\DatabaseParameterInfo.cs" />
-    <Compile Include="Targets\DatabaseTarget.cs" />
     <Compile Include="Targets\DebuggerTarget.cs" />
     <Compile Include="Targets\DebugTarget.cs" />
     <Compile Include="Targets\EventLogTarget.cs" />
@@ -317,17 +299,14 @@
     <Compile Include="Targets\FileTarget.cs" />
     <Compile Include="Targets\FormControlTarget.cs" />
     <Compile Include="Targets\LineEndingMode.cs" />
-    <Compile Include="Targets\LogReceiverWebServiceTarget.cs" />
     <Compile Include="Targets\MailTarget.cs" />
     <Compile Include="Targets\MemoryTarget.cs" />
     <Compile Include="Targets\MessageBoxTarget.cs" />
     <Compile Include="Targets\MethodCallParameter.cs" />
     <Compile Include="Targets\MethodCallTarget.cs" />
     <Compile Include="Targets\MethodCallTargetBase.cs" />
-    <Compile Include="Targets\NetworkTarget.cs" />
     <Compile Include="Targets\NetworkTargetOverflowAction.cs" />
     <Compile Include="Targets\NLogViewerParameterInfo.cs" />
-    <Compile Include="Targets\NLogViewerTarget.cs" />
     <Compile Include="Targets\NullTarget.cs" />
     <Compile Include="Targets\OutputDebugStringTarget.cs" />
     <Compile Include="Targets\PerformanceCounterTarget.cs" />
